@@ -1,0 +1,54 @@
+<section class="about" id="apropos">
+  <div class="about-inner">
+    <div class="about-visual">
+      <div class="portrait-frame">
+        <div class="portrait-placeholder">
+          <div class="portrait-initials">MD</div>
+        </div>
+        <div class="frame-accent frame-accent--tl"></div>
+        <div class="frame-accent frame-accent--br"></div>
+      </div>
+      <div class="experience-badge">
+        <span class="badge-number">25</span>
+        <span class="badge-label">Ans d'Expérience</span>
+      </div>
+    </div>
+
+    <div class="about-content">
+      <div class="section-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span>À Propos du Cabinet</span>
+      </div>
+
+      <h2 class="about-title">
+        Maître Marie Dupont,<br>
+        <em>Votre Défenseure</em>
+      </h2>
+
+      <p class="about-lead">
+        Avocate au Barreau de Paris depuis 1998, Maître Dupont a bâti
+        sa réputation sur une défense sans compromis et une approche
+        profondément humaine de chaque dossier.
+      </p>
+
+      <p class="about-body">
+        Diplômée de l'Université Paris I Panthéon-Sorbonne et titulaire d'un
+        Master en Droit des Affaires Internationales, elle dirige aujourd'hui
+        un cabinet de huit avocats spécialisés, reconnu parmi les 50 meilleurs
+        cabinets français par le classement Chambers & Partners.
+      </p>
+
+      <div class="credentials">
+        <div class="credential" *ngFor="let c of credentials">
+          <span class="credential-icon">{{ c.icon }}</span>
+          <div>
+            <span class="credential-title">{{ c.title }}</span>
+            <span class="credential-detail">{{ c.detail }}</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#contact" class="btn-outline">Rencontrer Maître Dupont</a>
+    </div>
+  </div>
+</section>

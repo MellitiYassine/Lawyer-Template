@@ -1,0 +1,145 @@
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <div class="section-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span>Nous Contacter</span>
+      </div>
+
+      <h2 class="contact-title">
+        Commençons par<br>
+        <em>une conversation</em>
+      </h2>
+
+      <p class="contact-lead">
+        La première consultation est gratuite. Prenez contact avec notre cabinet
+        pour discuter de votre situation juridique en toute confidentialité.
+      </p>
+
+      <div class="contact-details">
+        <div class="detail-item" *ngFor="let detail of contactDetails">
+          <div class="detail-icon">{{ detail.icon }}</div>
+          <div class="detail-content">
+            <span class="detail-label">{{ detail.label }}</span>
+            <span class="detail-value">{{ detail.value }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="opening-hours">
+        <h4 class="hours-title">Horaires d'ouverture</h4>
+        <div class="hours-list">
+          <div class="hours-row" *ngFor="let h of hours">
+            <span class="hours-day">{{ h.day }}</span>
+            <span class="hours-time">{{ h.time }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <form class="contact-form" (ngSubmit)="onSubmit()" #f="ngForm">
+        <h3 class="form-title">Demande de Consultation</h3>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prenom">Prénom *</label>
+            <input
+              id="prenom"
+              type="text"
+              [(ngModel)]="formData.prenom"
+              name="prenom"
+              placeholder="Jean"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="nom">Nom *</label>
+            <input
+              id="nom"
+              type="text"
+              [(ngModel)]="formData.nom"
+              name="nom"
+              placeholder="Dupont"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Adresse e-mail *</label>
+          <input
+            id="email"
+            type="email"
+            [(ngModel)]="formData.email"
+            name="email"
+            placeholder="jean.dupont@exemple.fr"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="telephone">Téléphone</label>
+          <input
+            id="telephone"
+            type="tel"
+            [(ngModel)]="formData.telephone"
+            name="telephone"
+            placeholder="+33 1 23 45 67 89"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="domaine">Domaine juridique concerné *</label>
+          <select
+            id="domaine"
+            [(ngModel)]="formData.domaine"
+            name="domaine"
+            required
+          >
+            <option value="" disabled selected>Sélectionnez un domaine</option>
+            <option *ngFor="let d of domaines" [value]="d">{{ d }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Décrivez brièvement votre situation *</label>
+          <textarea
+            id="message"
+            [(ngModel)]="formData.message"
+            name="message"
+            rows="4"
+            placeholder="Veuillez décrire votre situation juridique..."
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-footer">
+          <p class="form-disclaimer">
+            🔒 Toutes vos informations sont traitées avec la plus stricte confidentialité.
+          </p>
+          <button type="submit" class="btn-submit" [disabled]="submitted">
+            <span *ngIf="!submitted">Envoyer ma Demande</span>
+            <span *ngIf="submitted">✓ Message Envoyé</span>
+          </button>
+        </div>
+
+        <div class="success-message" *ngIf="submitted">
+          Merci pour votre message. Nous vous contacterons dans les 24 heures.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-mark-sm">D</span>
+        <span class="footer-name">Dupont &amp; Associés — Cabinet d'Avocats</span>
+      </div>
+      <p class="footer-copy">
+        © {{ currentYear }} Dupont &amp; Associés. Tous droits réservés. · Membre du Barreau de Paris
+      </p>
+    </div>
+  </footer>
+</section>

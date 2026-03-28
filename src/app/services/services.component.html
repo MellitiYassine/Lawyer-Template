@@ -1,0 +1,40 @@
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span>Domaines d'Expertise</span>
+      </div>
+      <h2 class="services-title">
+        Nos <em>Domaines</em><br>de Pratique
+      </h2>
+      <p class="services-subtitle">
+        Une expertise juridique pointue dans les domaines les plus complexes
+        du droit français et international.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div
+        class="service-card"
+        *ngFor="let service of services; let i = index"
+        [class.featured]="service.featured"
+        (mouseenter)="activeIndex = i"
+        (mouseleave)="activeIndex = -1"
+        [class.active]="activeIndex === i"
+      >
+        <div class="card-number">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="card-icon">{{ service.icon }}</div>
+        <h3 class="card-title">{{ service.title }}</h3>
+        <p class="card-desc">{{ service.description }}</p>
+        <ul class="card-list">
+          <li *ngFor="let item of service.items">{{ item }}</li>
+        </ul>
+        <a href="#contact" class="card-link">
+          Consulter <span>→</span>
+        </a>
+        <div class="card-glow"></div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,222 @@
+.about {
+  padding: 8rem 2.5rem;
+  background: var(--noir-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: 'DROIT';
+  position: absolute;
+  right: -2rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  font-family: var(--font-display);
+  font-size: 14rem;
+  font-weight: 600;
+  color: rgba(201, 168, 76, 0.03);
+  pointer-events: none;
+  letter-spacing: 0.2em;
+  white-space: nowrap;
+}
+
+.about-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 7rem;
+  align-items: center;
+}
+
+.about-visual {
+  position: relative;
+}
+
+.portrait-frame {
+  position: relative;
+  aspect-ratio: 3/4;
+  max-width: 380px;
+}
+
+.portrait-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--stone);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portrait-initials {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  font-weight: 300;
+  color: var(--gold);
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+}
+
+.frame-accent {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+}
+
+.frame-accent--tl {
+  top: -12px;
+  left: -12px;
+  border-top: 2px solid var(--gold);
+  border-left: 2px solid var(--gold);
+}
+
+.frame-accent--br {
+  bottom: -12px;
+  right: -12px;
+  border-bottom: 2px solid var(--gold);
+  border-right: 2px solid var(--gold);
+}
+
+.experience-badge {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -2rem;
+  background: var(--gold);
+  color: var(--noir);
+  padding: 1.2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.badge-number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.badge-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.eyebrow-line {
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.about-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 1.8rem;
+  color: var(--cream);
+}
+
+.about-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.about-lead {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--cream-soft);
+  margin-bottom: 1.2rem;
+  font-weight: 300;
+}
+
+.about-body {
+  font-size: 0.85rem;
+  line-height: 1.85;
+  color: rgba(245, 240, 232, 0.55);
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+.credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2.8rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid rgba(201, 168, 76, 0.2);
+}
+
+.credential {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.credential-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.credential-title {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--cream);
+  letter-spacing: 0.04em;
+}
+
+.credential-detail {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+  font-weight: 300;
+}
+
+.btn-outline {
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 0.9rem 2.2rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--gold);
+  color: var(--noir);
+}
+
+@media (max-width: 960px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .portrait-frame {
+    max-width: 280px;
+  }
+}

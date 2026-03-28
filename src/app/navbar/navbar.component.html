@@ -1,0 +1,27 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="nav-inner">
+    <a class="logo" href="#">
+      <span class="logo-mark">D</span>
+      <div class="logo-text">
+        <span class="logo-name">Dupont &amp; Associés</span>
+        <span class="logo-tagline">Cabinet d'Avocats</span>
+      </div>
+    </a>
+
+    <ul class="nav-links" [class.open]="menuOpen">
+      <li><a href="#accueil" (click)="closeMenu()">Accueil</a></li>
+      <li><a href="#apropos" (click)="closeMenu()">À Propos</a></li>
+      <li><a href="#services" (click)="closeMenu()">Services</a></li>
+      <li><a href="#contact" (click)="closeMenu()">Contact</a></li>
+      <li class="nav-cta">
+        <a href="#contact" class="btn-nav" (click)="closeMenu()">Consultation Gratuite</a>
+      </li>
+    </ul>
+
+    <button class="hamburger" (click)="toggleMenu()" [class.active]="menuOpen" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
